@@ -1,0 +1,61 @@
+﻿<Window x:Class="BreakOutGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BreakOutGame"
+        mc:Ignorable="d"
+        Title="BreakOut" Height="450" Width="495" KeyDown="Window_KeyDown">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <LinearGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                    <RotateTransform Angle="204.44400000000002" CenterY="0.5" CenterX="0.5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LinearGradientBrush.RelativeTransform>
+            <GradientStop Color="#FF002C61" Offset="0.004"/>
+            <GradientStop Color="#FF0051AF" Offset="1"/>
+            <GradientStop Color="#FF003B7F" Offset="0.818"/>
+            <GradientStop Color="#FF003A7E" Offset="0.443"/>
+            <GradientStop Color="#FF00306A" Offset="0.117"/>
+            <GradientStop Color="#FF004BA2" Offset="0.929"/>
+            <GradientStop Color="#FF004CA4" Offset="0.962"/>
+            <GradientStop Color="#FF003676" Offset="0.204"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+
+
+    <Grid x:Name="Playground">
+        <Border x:Name="Ball" Height="25" Width="25" Background="White"  Margin="238,0,0,35"
+                CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+
+        <Border x:Name="Board" Height="20" Width="100" Background="White" Margin="200,0,0,10"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+                <Border Background="Red"/>
+                <Border Background="Red" Grid.Column="2" Margin="0,0,-3,0"/>
+            </Grid>
+        </Border>
+        <Label Content="Жизни:" Foreground="White" HorizontalAlignment="Left" Margin="412,0,0,0" VerticalAlignment="Top"/>
+        <Label Name="HP" Content="3" Foreground="White" HorizontalAlignment="Left" Margin="461,0,0,0" VerticalAlignment="Top" Width="25"/>
+
+        <Label Content="Очки:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="SCORE" Content="0" Foreground="White" HorizontalAlignment="Left" Margin="41,0,0,0" VerticalAlignment="Top" Width="364"/>
+
+        <Label Name="GameOverLabel" Content="Игра окончена"  Visibility="Hidden"
+               Foreground="White" FontSize="20" Height="37" VerticalAlignment="Top" HorizontalAlignment="Center" Width="148" />
+        <Label Name="GameOverNotesLabel" Content="R - перезапустить" Visibility="Hidden"
+               Foreground="White" FontSize="15" Margin="171,0,0,350" Height="36" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="148" />
+        <Label Name="PauseLabel" Content="Пауза" Visibility="Hidden"
+              Foreground="White" FontSize="20" Margin="171,0,0,380" Height="37" VerticalAlignment="Bottom" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Width="148" />
+    </Grid>
+</Window>
